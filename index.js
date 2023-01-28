@@ -3,14 +3,15 @@ const app = express();
 const port = 8000;
 
 //use express router
-app.use('/',require('./routes'));
+//by default it takes './routes/index' so it is necessary to crete index.js in routes otherwise explicitally we have to mention it like ./routes/about so control will start from about 
+app.use('/', require('./routes'));
 
 //set up the view engine
-app.set('view engine','ejs');
-app.set('views','./views');
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
-app.listen(port,function(err){
-    if(err){
+app.listen(port, function (err) {
+    if (err) {
         // console.log("Error: ",err);
         console.log(`Error in running the server: ${err}`);
         //include var inside string is called interpolation
