@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title %></title>
+</head>
+<body>
+    <!-- Partials -->
+    <!-- Partials are basically part of code which can be used repeatedly -->
+    <%-include('_header.ejs');%>
+   
+    <!-- by adding body now it becomes layout where body predefined keyword where var part is rendered -->
+    <!-- layout automatically puts the var part into a specified structure by express-ejs-layout -->
+    <%- body %> 
+    
+    <!-- Partials -->
+    <%-include('_footer');%>
+</body>
+</html>
