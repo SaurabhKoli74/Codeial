@@ -3,7 +3,17 @@ const expressEjsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = 8000;
 
+
+//to use static files such as css,js,images, fonts
+app.use(express.static('./assets'));
+
+//to implement layouts
 app.use(expressEjsLayouts);
+
+//extract styles and scripts from sub-pages into the layout
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
+
 
 
 
