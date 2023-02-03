@@ -2,7 +2,7 @@ const express = require('express');
 const expressEjsLayouts = require('express-ejs-layouts');
 const app = express();
 const port = 8000;
-
+const db = require('./config/mongoose');
 
 //to use static files such as css,js,images, fonts
 app.use(express.static('./assets'));
