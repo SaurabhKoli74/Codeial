@@ -2,9 +2,28 @@
 
 const User = require('../models/User');
 module.exports.profile = function (req, res) {
-    res.render('profile',{
-        title:'Codeial'
-    })
+
+    console.log(req.cookies.user_id)
+    if (req.cookies.user_id) {
+
+
+        User.findById(req.cookies.user_id, function (err, user) {
+            if (user) {
+                return res.render('user_profile',{
+                    title:"User Profile",
+                    user:user
+                });
+            }
+            else
+            return   res.redirect('/users/sign-in');
+         
+        });
+  
+    }
+    else {
+        res.redirect('/users/sign-in');
+    }
+
 }
 
 
