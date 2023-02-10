@@ -8,7 +8,7 @@ const db = require('./config/mongoose');
 app.use(express.static('./assets'));
 
 //to implement layouts
-app.use(expressEjsLayouts);
+app.use(expressEjsLayouts); 
 
 //extract styles and scripts from sub-pages into the layout
 app.set('layout extractStyles',true);
